@@ -13,20 +13,29 @@
       <li><a href="#&amp;id=6" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image12','','menu_m_info_a.png',1)"><%= image_tag 'menu_m_info.png', width: 221, height: 31, border: 0 %></li>
       <li><a href="#&amp;id=7" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image13','','menu_m_contacts_a.png',1)"><%= image_tag 'menu_m_contacts.png', width: 221, height: 31, border: 0 %></li>
     </ul>
-    <!-- Регистрация на сайте -->
-    <div id="login" align="right">
-      <h3>Регистрация</h3>
-      <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-        <%= devise_error_messages! %>
-        <div><%= f.label :email %><br />
-          <%= f.email_field :email, size: 16 %></div>
-        <div><%= f.label :password %><br />
-          <%= f.password_field :password, size: 16 %></div>
-        <div><%= f.label :password_confirmation %><br />
-          <%= f.password_field :password_confirmation, size: 16 %></div>
-        <div><%= f.submit "Sign up" %></div>
-      <% end %>
-    </div>
+    <!--Форма входа на сайт-->
+       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password %><br />
+        <%= f.password_field :password, autocomplete: "current-password" %>
+      </div>
+
+      <% if devise_mapping.rememberable? -%>
+        <div class="field">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+        </div>
+      <% end -%>
+
+      <div class="actions">
+        <%= f.submit "Log in" %>
+      </div>
+    <% end %>
 
 
 
