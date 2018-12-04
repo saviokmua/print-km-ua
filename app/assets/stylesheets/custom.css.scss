@@ -1,0 +1,200 @@
+@import "bootstrap";
+
+body {
+  background: url(back.png) repeat-x top;
+  font-family: Georgia, serif;
+  font-size:13px;
+  color:#13476d;
+  height: 100%;
+  margin-left: 0px;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  line-height: 1.5;
+}
+#content {
+  background : url(header_page.gif) no-repeat top;
+  height: 749px;
+  width: 1272px;
+}
+#content_subpage {
+  background : url(back_subpage.gif) no-repeat top;
+  height: 749px;
+  width: 1272px;
+}
+#logo {
+  height: 62px;
+  margin-top: 165px;
+}
+#home_url{
+  padding-top: 16px;
+  padding-left: 957px;
+}
+.home_url {
+  font-family:Tahoma;
+  font-size:11px;
+  color:#99d4fe;
+  text-decoration: underline;
+  font-weight: bold;
+}
+.home_url:hover {
+  font-family:Tahoma;
+  font-size:11px;
+  color:#99d4fe;
+  text-decoration: none;
+  font-weight: bold;
+}
+#menu {
+  padding-top: 170px;
+  padding-left: 170px;
+  float: left;
+}
+#submenu {
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  color:#1c7f51;
+  font-family: Georgia, serif;
+  font-size:13px;
+  font-weight: bold;
+}
+#login {
+  width: 221px;
+  height:   106px;
+  padding-top: 10px;
+  padding-left: 15px;
+  margin: 10px;
+  margin-right: 20px;
+  background : url(login_area.gif) no-repeat top;
+}
+#ul_login {
+  padding-left: 0px;
+  margin: 10px;
+  margin-right: 20px;
+}
+#right {
+  padding-top: 20px;
+  padding-left: 485px;
+  padding-right: 100px;
+}
+#end {
+  padding-top: 20px;
+  padding-left: 190px;
+  padding-right: 100px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+#menu_links1 {
+  padding-top: 5px;
+  width: 110px;
+}
+#topmenu {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+#bottom {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+a {
+  text-decoration: underline;
+  color:#509f20;
+  font-family: Georgia, serif;
+  font-size:13px;
+}
+
+a:hover	{
+  text-decoration: none;
+}
+#spacer {
+  padding-top: 25px;
+}
+.enter{
+  text-decoration: underline;
+  color:#405fa6;
+  font-family: Georgia, serif;
+  font-size:11px;
+}
+.enter:hover	{
+  text-decoration: none;
+}
+.for{
+  text-decoration: underline;
+  color:#509f20;
+  font-family: Georgia, serif;
+  font-size:11px;
+}
+.for:hover	{
+  text-decoration: none;
+}
+#headertext {
+  font-family:Times New Roman;
+  font-size:24px;
+  color:#ADADAD;
+}
+.text {
+  padding-top: 10px;
+  line-height: 1.5;
+  font-family:Tahoma;
+  font-size:11px;
+  color:#ffffff;
+}
+#text1 {
+  font-weight: bold;
+}
+#link {
+  font-weight: bold;
+  padding-right: 5px;
+}
+#paddingtext {
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+ul{
+  padding-left: 10px;
+  list-style: none;
+}
+li{
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 0px;
+  list-style: none;
+}
+#footer {   background : url(footer_back.png) repeat-x ;
+  height: 55px;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  line-height: 1.5;
+}
+#copy {
+  font-family: "Courier New", Courier, monospace;
+  font-size:11px;
+  color:#7e9cb1;
+  float: left;
+}
+#menu_bottom {
+  font-family: "Courier New", Courier, monospace;
+  font-size:13px;
+  color:#3278ac;
+}
+.mb{
+  text-decoration: underline;
+  color:#5fbaff;
+  font-family: Georgia, serif;
+  font-size:11px;
+}
+.mb:hover	{
+  text-decoration: none;
+}
+.sb{
+  text-decoration: underline;
+  color:#1c7f51;
+  font-family: Georgia, serif;
+  font-size:13px;
+  font-weight: bold;
+}
+.sb:hover	{
+  text-decoration: none;
+}
