@@ -15,30 +15,37 @@
     </ul>
     <!--Форма входа на сайт-->
     <div id="login" align="left">
-       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-      </div>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <% if user_signed_in? %>
+            Logged In
+            <div class="field">
+              <%= link_to "Вихід ", destroy_user_session_path, method: :delete%>
+            </div>
+          <%else %>
+            <div class="field">
+              <%= f.label :email %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+            </div>
 
-      <div class="field">
-        <%= f.label :password %><br />
-        <%= f.password_field :password, autocomplete: "current-password" %>
-      </div>
+            <div class="field">
+              <%= f.label :password %><br />
+              <%= f.password_field :password, autocomplete: "current-password" %>
+            </div>
 
-      <% if devise_mapping.rememberable? -%>
-        <div class="field">
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me %>
-        </div>
-      <% end -%>
+            <% if devise_mapping.rememberable? -%>
+              <div class="field">
+                <%= f.check_box :remember_me %>
+                <%= f.label :remember_me %>
+              </div>
+            <% end -%>
 
-      <div class="actions">
-        <%= f.submit "Log in" %>
-      </div>
-    <% end %>
-    </div>
+            <div class="actions">
+              <%= f.submit "Log in" %>
+            </div>
+      <% end %>
+      <% end %>
 
+  </div>
 
     <div id="login" align="right" style="display:none"><ul id="ul_login">
       <li>Пользователь&nbsp;<b></b></li>
@@ -63,6 +70,7 @@
   <%= image_tag 'right_top_name.gif'%>
   <a href="#&amp;op=order&amp;action=create" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image10','','button_order_a.gif',1)">
     <%= image_tag 'button_order.gif' , width: 636, height: 80, border: 0, alt: 'заказать'%>  </a> <br> <br> <br>
+
   <div id="right">
     <p>Мы рады представить Вам в Хмельницком сервис по печати цифровых фотографий через Интернет или локальную сеть.</p>
     <p>У Вас есть цифровой фотоаппарат и Вы хотите поделиться своими фотографиями с друзьями, родствениками  и знакомыми?<br>Но у Вас нет времени  на посещение лаборатории, очереди, оформление заказа, опять очереди  и получение заказа? Тогда добро пожаловать к нам!</p>
@@ -71,6 +79,7 @@
     <p><%= image_tag 'image_person.gif', width: 105, height: 94, align: 'left'%> <%= link_to "Зарегистрировавшись на сайте",   new_user_registration_path %> Вы получаете возможность  хранить свои фотографии на сервере  в течение месяца, для последующей  или повторной печати.</p>
     <p><%= link_to "Зарегистрировавшись на сайте",   new_user_registration_path %>, вы получаете скидку на печать фотографий.</p>
   </div>
+</div>
   <div id="end">
     <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
