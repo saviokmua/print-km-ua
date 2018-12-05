@@ -14,6 +14,7 @@
       <li><a href="#&amp;id=7" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image13','','menu_m_contacts_a.png',1)"><%= image_tag 'menu_m_contacts.png', width: 221, height: 31, border: 0 %></li>
     </ul>
     <!--Форма входа на сайт-->
+    <div id="login" align="left">
        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
         <%= f.label :email %><br />
@@ -36,7 +37,7 @@
         <%= f.submit "Log in" %>
       </div>
     <% end %>
-
+    </div>
 
 
     <div id="login" align="right" style="display:none"><ul id="ul_login">
