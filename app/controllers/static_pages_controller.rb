@@ -1,22 +1,17 @@
+# frozen_string_literal: true
+
 class StaticPagesController < ApplicationController
-  def services
-  end
+  def services; end
 
-  def price
-  end
+  def price; end
 
-  def payment
-  end
+  def payment; end
 
-  def delivery
-  end
+  def delivery; end
 
-  def conditions
-  end
+  def conditions; end
 
-  def faq
-  end
+  def faq; end
 
-  def contacts
-  end
+  def contacts; end
 end
