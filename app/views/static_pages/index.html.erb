@@ -5,54 +5,81 @@
   </div>
   <div id="menu">
     <ul>
-      <li><a href="#&amp;id=1" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image7','','menu_m_services_a.png',1)"><%= image_tag 'menu_m_services.png', width: 221, height: 31, border: 0 %></li>
-      <li><a href="#&amp;id=2" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image8','','menu_m_services_a.png',1)"><%= image_tag 'menu_m_prices.png', width: 221, height: 31, border: 0 %></li>
-      <li><a href="#&amp;id=3" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image9','','menu_m_payment_a.png',1)"><%= image_tag 'menu_m_payment.png', width: 221, height: 31, border: 0 %></li>
-      <li><a href="#&amp;id=4" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image10','','menu_m_shipping_a.png',1)"><%= image_tag 'menu_m_shipping.png', width: 221, height: 31, border: 0 %></li>
-      <li><a href="#&amp;id=5" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image11','','menu_m_how_a.png',1)"><%= image_tag 'menu_m_how.png', width: 221, height: 31, border: 0 %></li>
-      <li><a href="#&amp;id=6" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image12','','menu_m_info_a.png',1)"><%= image_tag 'menu_m_info.png', width: 221, height: 31, border: 0 %></li>
-      <li><a href="#&amp;id=7" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image13','','menu_m_contacts_a.png',1)"><%= image_tag 'menu_m_contacts.png', width: 221, height: 31, border: 0 %></li>
+      <li>
+        <a href="#&amp;id=1" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image7','','menu_m_services_a.png',1)">
+          <%= image_tag 'menu_m_services.png', width: 221, height: 31, border: 0 %>
+        </a>
+      </li>
+      <li>
+        <a href="#&amp;id=2" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image8','','menu_m_services_a.png',1)">
+          <%= image_tag 'menu_m_prices.png', width: 221, height: 31, border: 0 %>
+        </a>
+      </li>
+      <li>
+        <a href="#&amp;id=3" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image9','','menu_m_payment_a.png',1)">
+          <%= image_tag 'menu_m_payment.png', width: 221, height: 31, border: 0 %>
+        </a>
+      </li>
+      <li>
+        <a href="#&amp;id=4" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image10','','menu_m_shipping_a.png',1)">
+          <%= image_tag 'menu_m_shipping.png', width: 221, height: 31, border: 0 %>
+        </a>
+      </li>
+      <li>
+        <a href="#&amp;id=5" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image11','','menu_m_how_a.png',1)">
+          <%= image_tag 'menu_m_how.png', width: 221, height: 31, border: 0 %>
+        </a>
+      </li>
+      <li>
+        <a href="#&amp;id=6" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image12','','menu_m_info_a.png',1)">
+          <%= image_tag 'menu_m_info.png', width: 221, height: 31, border: 0 %>
+        </a>
+      </li>
+      <li>
+        <a href="#&amp;id=7" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image13','','menu_m_contacts_a.png',1)">
+          <%= image_tag 'menu_m_contacts.png', width: 221, height: 31, border: 0 %>
+        </a>
+      </li>
     </ul>
     <!--Форма входа на сайт-->
     <div id="login" align="left">
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-          <% if user_signed_in? %>
-            Logged In
-            <div class="field">
-              <%= link_to "Вихід ", destroy_user_session_path, method: :delete%>
-            </div>
-          <%else %>
-            <div class="field">
-              <%= f.label :email %><br />
-              <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-            </div>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <% if user_signed_in? %>
+          Logged In
+          <div class="field">
+            <%= link_to "Вихід ", destroy_user_session_path, method: :delete %>
+          </div>
+        <% else %>
+          <div class="field">
+            <%= f.label :email %><br/>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          </div>
 
+          <div class="field">
+            <%= f.label :password %><br/>
+            <%= f.password_field :password, autocomplete: "current-password" %>
+          </div>
+
+          <% if devise_mapping.rememberable? -%>
             <div class="field">
-              <%= f.label :password %><br />
-              <%= f.password_field :password, autocomplete: "current-password" %>
+              <%= f.check_box :remember_me %>
+              <%= f.label :remember_me %>
             </div>
+          <% end -%>
 
-            <% if devise_mapping.rememberable? -%>
-              <div class="field">
-                <%= f.check_box :remember_me %>
-                <%= f.label :remember_me %>
-              </div>
-            <% end -%>
-
-            <div class="actions">
-              <%= f.submit "Log in" %>
-            </div>
+          <div class="actions">
+            <%= f.submit "Log in" %>
+          </div>
+        <% end %>
       <% end %>
-      <% end %>
-
-  </div>
-
-    <div id="login" align="right" style="display:none"><ul id="ul_login">
-      <li>Пользователь&nbsp;<b></b></li>
-      <li>На вашем счету&nbsp;<b> грн.</b></li>
-      <li><a href="#&amp;op=logout">Выйти</a>
-        <br>
-    </ul>
+    </div>
+    <div id="login" align="right" style="display:none">
+      <ul id="ul_login">
+        <li>Пользователь&nbsp;<b></b></li>
+        <li>На вашем счету&nbsp;<b> грн.</b></li>
+        <li><a href="#&amp;op=logout">Выйти</a>
+          <br>
+      </ul>
       <p>
       <p>&nbsp;</p>
     </div>
@@ -61,42 +88,56 @@
     <p><span style="display:none">&nbsp;<a href="#&amp;op=order&amp;action=edit_photo&amp;act=create"><img src="new_24.png" width="24" height="24" border="0">Сделать заказ</a> |
        &nbsp;<a href="#&amp;op=order&amp;action=list"><img src="orders_24.gif" width="24" height="24" border="0">заказы</a> |
 	       &nbsp;<a href="#&amp;op=order&amp;action=myoffice"><img src="account_24.png" width="24" height="24" border="0">личный кабинет</a> |
-    &nbsp;<a href="#&amp;op=order&amp;action=price"> <%= image_tag 'money_24.gif' , width: 24, height: 24, border: 0%>тарифы</a></span></p>
+    &nbsp;<a href="#&amp;op=order&amp;action=price"> <%= image_tag 'money_24.gif', width: 24, height: 24, border: 0 %>
+      тарифы</a></span></p>
   </div>
   <div id="submenu" style="display:none">
     <br>
   </div>
   <div id="end"></div>
-  <%= image_tag 'right_top_name.gif'%>
+  <%= image_tag 'right_top_name.gif' %>
   <a href="#&amp;op=order&amp;action=create" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image10','','button_order_a.gif',1)">
-    <%= image_tag 'button_order.gif' , width: 636, height: 80, border: 0, alt: 'заказать'%>  </a> <br> <br> <br>
+    <%= image_tag 'button_order.gif', width: 636, height: 80, border: 0, alt: 'заказать' %>  </a> <br> <br> <br>
 
   <div id="right">
     <p>Мы рады представить Вам в Хмельницком сервис по печати цифровых фотографий через Интернет или локальную сеть.</p>
-    <p>У Вас есть цифровой фотоаппарат и Вы хотите поделиться своими фотографиями с друзьями, родствениками  и знакомыми?<br>Но у Вас нет времени  на посещение лаборатории, очереди, оформление заказа, опять очереди  и получение заказа? Тогда добро пожаловать к нам!</p>
-    <p>С помощью нашего сервиса Вы сможете заказать печать цифровых фотографий в режиме онлайн.<br>Возможны любые количества, форматы, предпечатная подготовка и обработка</p>
-    <p>Заказ будет  выполнен на профессиональном оборудовании Noritsu QSS и на следующий день курьер доставит Вам Ваши фотографии.</p>
-    <p><%= image_tag 'image_person.gif', width: 105, height: 94, align: 'left'%> <%= link_to "Зарегистрировавшись на сайте",   new_user_registration_path %> Вы получаете возможность  хранить свои фотографии на сервере  в течение месяца, для последующей  или повторной печати.</p>
-    <p><%= link_to "Зарегистрировавшись на сайте",   new_user_registration_path %>, вы получаете скидку на печать фотографий.</p>
+    <p>У Вас есть цифровой фотоаппарат и Вы хотите поделиться своими фотографиями с друзьями, родствениками и знакомыми?<br>Но
+      у Вас нет времени на посещение лаборатории, очереди, оформление заказа, опять очереди и получение заказа? Тогда
+      добро пожаловать к нам!</p>
+    <p>С помощью нашего сервиса Вы сможете заказать печать цифровых фотографий в режиме онлайн.<br>Возможны любые
+      количества, форматы, предпечатная подготовка и обработка</p>
+    <p>Заказ будет выполнен на профессиональном оборудовании Noritsu QSS и на следующий день курьер доставит Вам Ваши
+      фотографии.</p>
+    <p><%= image_tag 'image_person.gif', width: 105, height: 94, align: 'left' %> <%= link_to "Зарегистрировавшись на сайте", new_user_registration_path %>
+      Вы получаете возможность хранить свои фотографии на сервере в течение месяца, для последующей или повторной
+      печати.</p>
+    <p><%= link_to "Зарегистрировавшись на сайте", new_user_registration_path %>, вы получаете скидку на печать
+      фотографий.</p>
   </div>
 </div>
-  <div id="end">
-    <table width="100%" border="0" cellspacing="0" cellpadding="0">
-      <tr>
-        <td width="10" height="10"><%= image_tag 'ramka11.gif', width: 10, height: 10 %></td>
-        <td background="ramka_t.gif" height="10"><%= image_tag 'ramka_t.gif', width: 2, height: 10 %></td>
-        <td width="10" height="10"><%= image_tag 'ramka12.gif', width: 10, height: 10 %></td>
-      </tr>
-      <tr>
-        <td <%= image_tag 'ramka_l.gif', width: 10, height: 1 %>
-        <td>
-          <%= image_tag 'image_paper.png', width: 92, height: 101, hspace: 10, vspace: 5, align: 'left', alt: 'image_paper.png'%>Вы можете загрузить фотографии через наш сайт. Сервис позволяет загружать фотографии с Вашего компьютера. Вы сможете установить количество, размер, тип бумаги и обработку для каждой фотографии. После этого Вам необходимо будет указать Ваши контактные данные и заказ будет оформлен. Загрузка фотографий через ФТП, который доступен по сети провайдеров г. Хмельницкого: Infodom, Happy.net, Datasvit, X-City. Скорость подключения до 100мбит/с, не требует сети интернет!!!	</td>
-        <td background="ramka_r.gif" width="10"><%= image_tag 'ramka_r.gif', width: 10, height: 1 %></td>
-      </tr>
-      <tr>
-        <td height="10" width="10"><%= image_tag 'ramka21.gif', width: 10, height: 10 %></td>
-        <td background="ramka_b.gif" height="10"><%= image_tag 'ramka_b.gif', width: 1, height: 10 %></td>
-        <td height="10" width="10"><%= image_tag 'ramka22.gif', width: 10, height: 10 %></td>
-      </tr>
-    </table>
-  </div>
+<div id="end">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width="10" height="10"><%= image_tag 'ramka11.gif', width: 10, height: 10 %></td>
+      <td background="ramka_t.gif" height="10"><%= image_tag 'ramka_t.gif', width: 2, height: 10 %></td>
+      <td width="10" height="10"><%= image_tag 'ramka12.gif', width: 10, height: 10 %></td>
+    </tr>
+    <tr>
+      <td <%= image_tag 'ramka_l.gif', width: 10, height: 1 %>
+      <td>
+        <%= image_tag 'image_paper.png', width: 92, height: 101, hspace: 10, vspace: 5, align: 'left', alt: 'image_paper.png' %>
+        Вы можете загрузить фотографии через наш сайт. Сервис позволяет загружать фотографии с Вашего компьютера. Вы
+        сможете установить количество, размер, тип бумаги и обработку для каждой фотографии. После этого Вам необходимо
+        будет указать Ваши контактные данные и заказ будет оформлен. Загрузка фотографий через ФТП, который доступен по
+        сети провайдеров г. Хмельницкого: Infodom, Happy.net, Datasvit, X-City. Скорость подключения до 100мбит/с, не
+        требует сети интернет!!!
+      </td>
+      <td background="ramka_r.gif" width="10"><%= image_tag 'ramka_r.gif', width: 10, height: 1 %></td>
+    </tr>
+    <tr>
+      <td height="10" width="10"><%= image_tag 'ramka21.gif', width: 10, height: 10 %></td>
+      <td background="ramka_b.gif" height="10"><%= image_tag 'ramka_b.gif', width: 1, height: 10 %></td>
+      <td height="10" width="10"><%= image_tag 'ramka22.gif', width: 10, height: 10 %></td>
+    </tr>
+  </table>
+</div>
