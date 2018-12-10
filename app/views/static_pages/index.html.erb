@@ -1,4 +1,4 @@
-<!-- Главное боковое меню -->
+<!-- Main side menu -->
 <div id="content" align="left">
   <div id="home_url">
     <a href="http://print.km.ua" class="home_url">www.print.km.ua</a>
@@ -41,7 +41,7 @@
         </a>
       </li>
     </ul>
-    <!--Форма входа на сайт-->
+    <!--Login form-->
     <div id="login" align="left">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <% if user_signed_in? %>
@@ -73,6 +73,7 @@
         <% end %>
       <% end %>
     </div>
+    <!--Page of oder-->
     <div id="login" align="right" style="display:none">
       <ul id="ul_login">
         <li>Пользователь&nbsp;<b></b></li>
@@ -98,7 +99,7 @@
   <%= image_tag 'right_top_name.gif' %>
   <a href="#&amp;op=order&amp;action=create" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image10','','button_order_a.gif',1)">
     <%= image_tag 'button_order.gif', width: 636, height: 80, border: 0, alt: 'заказать' %>  </a> <br> <br> <br>
-
+  <!--Text on mainpage-->
   <div id="right">
     <p>Мы рады представить Вам в Хмельницком сервис по печати цифровых фотографий через Интернет или локальную сеть.</p>
     <p>У Вас есть цифровой фотоаппарат и Вы хотите поделиться своими фотографиями с друзьями, родствениками и знакомыми?<br>Но
@@ -115,6 +116,7 @@
       фотографий.</p>
   </div>
 </div>
+<!--Download pictures form-->
 <div id="end">
   <table width="100%" border="0" cellspacing="0" cellpadding="0">
     <tr>
