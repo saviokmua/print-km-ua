@@ -42,37 +42,7 @@
       </li>
     </ul>
     <!--Login form-->
-    <div id="login" align="left">
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <% if user_signed_in? %>
-          Logged In
-          <div class="field">
-            <%= link_to "Вихід ", destroy_user_session_path, method: :delete %>
-          </div>
-        <% else %>
-          <div class="field">
-            <%= f.label :email %><br/>
-            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-          </div>
-
-          <div class="field">
-            <%= f.label :password %><br/>
-            <%= f.password_field :password, autocomplete: "current-password" %>
-          </div>
-
-          <% if devise_mapping.rememberable? -%>
-            <div class="field">
-              <%= f.check_box :remember_me %>
-              <%= f.label :remember_me %>
-            </div>
-          <% end -%>
-
-          <div class="actions">
-            <%= f.submit "Log in" %>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
+       <%= render "validation"  %>
     <!--Page of oder-->
     <div id="login" align="right" style="display:none">
       <ul id="ul_login">
