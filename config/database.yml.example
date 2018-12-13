@@ -1,0 +1,10 @@
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  pool: 30
+  username: postgres
+  password: postgres
+
+development:
+  <<: *default
+  database: printkmua_development
