@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
+
   root 'static_pages#index'
   get 'services' => 'static_pages#services', as: 'services'
   get 'price' => 'static_pages#price', as: 'price'
