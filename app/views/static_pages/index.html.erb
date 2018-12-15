@@ -27,8 +27,31 @@
         <%= link_to image_tag('menu_m_contacts.png'), contacts_path %>
       </li>
     </ul>
-    <!--Login form-->
+        <!--Login form-->
        <%= render "shared/validation"  %>
+        <!-- Admin links-->
+    <br>
+    <br>
+    <br>
+    <% if user_signed_in? %>
+    <ul>
+      <li>
+        <%= link_to "Тарифи",tariffs_path %>
+      </li>
+      <li>
+        <%= link_to "Категорія тарифів",'#'%>
+      </li>
+      <li>
+        <%= link_to "Замовлення",'#'%>
+      </li>
+      <li>
+        <%= link_to "Статуси замовлень",'#'%>
+      </li>
+      <li>
+        <%= link_to "Користувачі",'#'%>
+      </li>
+     </ul>
+    <%end %>
     <!--Page of oder-->
     <div id="login" align="right" style="display:none">
       <ul id="ul_login">

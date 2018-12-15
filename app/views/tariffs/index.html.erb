@@ -1,0 +1,12 @@
+<br>
+<br>
+<h1>Всі тарифи </h1>
+<% @tariff.each do |tariff| %>
+  <div class="alert alert-light">
+    <H4><%= tariff.name %></H4>
+    <H4><%= tariff.price %></H4>
+    <%= link_to "Редактувати", edit_tariff_path(@tariff),class: 'btn btn-warning' %>
+    <%= link_to "Видалити ", tariff_path(@tariff), method: :delete, data: {confirm: "Чи ви дійсно хочете видалити тариф?"}, class: 'btn btn-danger' %>
+  </div>
+  <br>
+<% end %>
