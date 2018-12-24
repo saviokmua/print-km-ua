@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     sessions: 'users/sessions'
   }
-  resources :users
+
   root 'static_pages#index'
   get 'services' => 'static_pages#services', as: 'services'
   get 'price' => 'static_pages#price', as: 'price'
@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   get 'conditions' => 'static_pages#conditions', as: 'conditions'
   get 'faq' => 'static_pages#faq', as: 'faq'
   get 'contacts' => 'static_pages#contacts', as: 'contacts'
+  get 'users' => 'users#users' , as: 'users'
 end
