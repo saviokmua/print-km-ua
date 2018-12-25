@@ -1,4 +1,4 @@
 class UsersController  <  ApplicationController
- def users
+ def  user_form
  end
 end

@@ -13,5 +13,5 @@ Rails.application.routes.draw do
   get 'conditions' => 'static_pages#conditions', as: 'conditions'
   get 'faq' => 'static_pages#faq', as: 'faq'
   get 'contacts' => 'static_pages#contacts', as: 'contacts'
-  get 'users' => 'users#users' , as: 'users'
+  get 'users' => 'users#user_form', as: 'user_form'
 end
