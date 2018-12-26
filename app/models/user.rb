@@ -7,4 +7,5 @@ class User  < ActiveRecord::Base
          :recoverable, :rememberable, :validatable
 validates  :admin , presence: false
 
+
 end
