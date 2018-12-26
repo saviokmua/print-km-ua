@@ -1,0 +1,14 @@
+<%= form_for :tariff, url: tariffs_path do |f| %>
+  <p>
+    <%= f.label :name, 'Назва тарифу' %>
+    <%= f.text_field(:name, { class: 'form-control' }) %>
+  </p>
+  <p>
+    <%= f.label :price, 'Ціна' %>
+    <%= f.text_field(:price, { class: 'form-control' }) %>
+  </p>
+  <p>
+    <br>
+    <%= f.submit('Зберегти', { class: 'btn btn-success' }) %>
+  </p>
+<% end %>
