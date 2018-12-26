@@ -1,0 +1,10 @@
+<%= form_for :tariff_group, url: tariff_groups_path do |f| %>
+  <p>
+    <%= f.label :name, 'Назва категорії тарифу' %>
+    <%= f.text_field(:name, { class: 'form-control' }) %>
+  </p>
+   <p>
+    <br>
+    <%= f.submit('Зберегти', { class: 'btn btn-success' }) %>
+  </p>
+<% end %>

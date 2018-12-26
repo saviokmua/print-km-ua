@@ -1,0 +1,17 @@
+<br>
+<br>
+<h1>Всі категорії тарифів</h1>
+<table style="width:100%;" border="1">
+  <tr>
+    <td width="50%">Назва категорії тарифу</td>
+
+    <td colspan="1" width="150"><%= link_to "Додати", new_tariff_group_path, class: 'btn btn-warning' %></td>
+  </tr>
+  <% @tariff_group.each do |tariff_group| %>
+    <tr>
+      <td><%= tariff_group.name %></td>
+      <td><%= link_to "Редактувати", edit_tariff_group_path(tariff_group), class: 'btn btn-warning' %></td>
+      <td><%= link_to "Видалити ", tariff_group_path(tariff_group), method: :delete, data: { confirm: "Ви дійсно хочете видалити категорію тарифу?" }, class: 'btn btn-danger' %></td>
+    </tr>
+  <% end %>
+</table>

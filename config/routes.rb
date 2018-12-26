@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
   resources :tariffs
+  resources :tariff_groups
   root 'static_pages#index'
   get 'services' => 'static_pages#services', as: 'services'
   get 'price' => 'static_pages#price', as: 'price'

@@ -1,0 +1,5 @@
+<H1><%= @tariff_groups.name %></H1>
+<hr>
+<%= link_to "Додати категорію тарифу", new_tariff_group_path(@tariff), class: 'btn btn-warning' %>
+<%= link_to "Редактувати", edit_tariff_group_path(@tariff), class: 'btn btn-warning' %>
+<%= link_to "Видалити ", tariff_groups_path(@tariff), method: :delete, data: { confirm: "Ви дійсно хочете видалити категорію тарифу?" }, class: 'btn btn-danger' %>
