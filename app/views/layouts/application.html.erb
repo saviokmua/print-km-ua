@@ -2,6 +2,7 @@
 <html>
 <head>
   <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' %>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   <%= render 'layouts/shim' %>
@@ -10,9 +11,8 @@
 <div class="container">
   <%= yield %>
   <%= render 'layouts/messages' %>
-  <%= render 'layouts/footer' %>
 </div>
-
+<%= render 'layouts/footer' %>
 </body>
 </html>
 

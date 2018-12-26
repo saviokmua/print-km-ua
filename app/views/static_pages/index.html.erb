@@ -31,9 +31,12 @@
        <%= render "shared/validation"  %>
         <!-- Admin links-->
     <br>
+    <br>
+    <br>
+    <% if user_signed_in? %>
     <ul>
       <li>
-        <%= link_to "Тарифи",'#'%>
+        <%= link_to "Тарифи",tariffs_path %>
       </li>
       <li>
         <%= link_to "Категорія тарифів",'#'%>
@@ -48,6 +51,7 @@
         <%= link_to "Користувачі",'#'%>
       </li>
      </ul>
+    <%end %>
     <!--Page of oder-->
     <div id="login" align="right" style="display:none">
       <ul id="ul_login">

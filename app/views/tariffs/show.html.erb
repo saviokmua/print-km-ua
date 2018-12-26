@@ -1,0 +1,6 @@
+<H1><%= @tariff.name %></H1>
+<H1><%= @tariff.price %></H1>
+<hr>
+<%= link_to "Додати тариф", new_tariff_path(@tariff), class: 'btn btn-warning' %>
+<%= link_to "Редактувати", edit_tariff_path(@tariff), class: 'btn btn-warning' %>
+<%= link_to "Видалити ", tariff_path(@tariff), method: :delete, data: { confirm: "Ви дійсно хочете видалити тариф?" }, class: 'btn btn-danger' %>

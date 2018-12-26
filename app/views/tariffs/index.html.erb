@@ -1,0 +1,18 @@
+<br>
+<br>
+<h1>Всі тарифи</h1>
+<table style="width:100%;" border="1">
+  <tr>
+    <td width="50%">Назва</td>
+    <td width="50%">Ціна</td>
+    <td colspan="2" width="150"><%= link_to "Додати", new_tariff_path, class: 'btn btn-warning' %></td>
+  </tr>
+  <% @tariff.each do |tariff| %>
+    <tr>
+      <td><%= tariff.name %></td>
+      <td><%= tariff.price %></td>
+      <td><%= link_to "Редактувати", edit_tariff_path(tariff), class: 'btn btn-warning' %></td>
+      <td><%= link_to "Видалити ", tariff_path(tariff), method: :delete, data: { confirm: "Ви дійсно хочете видалити тариф?" }, class: 'btn btn-danger' %></td>
+    </tr>
+  <% end %>
+</table>
