@@ -1,0 +1,7 @@
+<div id="tariff">
+<H1><%= @format_foto.name %></H1>
+<hr>
+<%= link_to "Додати формат фото", new_format_foto_path(@format_foto), class: 'btn btn-warning' %>
+<%= link_to "Редактувати", edit_format_foto_path(@format_foto), class: 'btn btn-warning' %>
+<%= link_to "Видалити ", format_fotos_path(@format_foto), method: :delete, data: { confirm: "Ви дійсно хочете видалити формат фото?" }, class: 'btn btn-danger' %>
+</div>

@@ -6,5 +6,6 @@ class CreateTariffGroups < ActiveRecord::Migration[5.2]
       t.string :name
       t.timestamps
     end
+    add_index :tariff_groups, :name
   end
 end

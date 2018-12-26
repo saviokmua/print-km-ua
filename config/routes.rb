@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   }
   resources :tariffs
   resources :tariff_groups
+  resources :format_fotos
   root 'static_pages#index'
   get 'services' => 'static_pages#services', as: 'services'
   get 'price' => 'static_pages#price', as: 'price'

@@ -43,4 +43,3 @@ class TariffGroupsController < ApplicationController
     params.require(:tariff_group).permit(:name)
   end
 end
-

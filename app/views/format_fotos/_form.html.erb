@@ -1,9 +1,9 @@
-<%= form_for :tariff_group, url: tariff_groups_path do |f| %>
+<%= form_for :format_foto, url: format_fotos_path do |f| %>
   <p>
-    <%= f.label :name, 'Назва категорії тарифу' %>
+    <%= f.label :name, 'Назва формату фото' %>
     <%= f.text_field(:name, { class: 'form-control' }) %>
   </p>
-   <p>
+  <p>
     <br>
     <%= f.submit('Зберегти', { class: 'btn btn-success' }) %>
   </p>
