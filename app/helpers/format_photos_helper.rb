@@ -1,0 +1,2 @@
+module FormatPhotosHelper
+end
