@@ -1,15 +1,4 @@
-class UsersController  <  ApplicationController
-
-    def  user_form
- end
-def show
+# frozen_string_literal: true
+class UsersController < ApplicationController
 end
- def new
- end
- def edit
- end
- def delete
-
- end
-  end
 
