@@ -8,7 +8,7 @@ class FormatPhotosController < ApplicationController
   end
 
   def new
-    @tformat_photo = FormatPhoto.new
+    @format_photo = FormatPhoto.new
   end
 
   def update
