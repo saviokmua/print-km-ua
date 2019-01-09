@@ -163,10 +163,13 @@ li{
 #tariff {
   padding-top: 50px;
 }
-#index {
+.index_table{
   width: 100%;
   border: 1px solid black;
   border-spacing: 3px;
+}
+.index_table td, th{
+  border: 1px solid black;
 }
 #footer {
   background : url(footer_back.png) repeat-x ;
