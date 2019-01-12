@@ -1,0 +1,62 @@
+Rails:
+  Enabled: true
+
+AllCops:
+  TargetRubyVersion: 2.3
+  Exclude:
+    - bin/**/*
+    - db/**/*
+    - config/**/*
+    - lib/templates/**/*
+    - vendor/**/*
+    - node_modules/**/*
+    # disable for task folder
+    - lib/tasks/**/*
+    # disable for tests because of specs are deprecated
+    - spec/**/*
+
+Style/Documentation:
+  Description: 'Document classes and non-namespace modules.'
+  Enabled: false
+
+Style/EmptyCaseCondition:
+  Enabled: false
+
+Style/SymbolArray:
+  Description: 'Use %i or %I for arrays of symbols.'
+  Enabled: true
+
+Metrics/LineLength:
+  Description: 'Limit lines to 120 characters.'
+  Max: 120
+
+Metrics/MethodLength:
+  Max: 20
+
+Documentation:
+  Enabled: false
+
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
+  SupportedStyles:
+    - nested
+    - compact
+
+# Align ends correctly.
+Lint/EndAlignment:
+  # The value `keyword` means that `end` should be aligned with the matching
+  # keyword (if, while, etc.).
+  # The value `variable` means that in assignments, `end` should be aligned
+  # with the start of the variable on the left hand side of `=`. In all other
+  # situations, `end` should still be aligned with the keyword.
+   EnforcedStyleAlignWith: variable
+   SupportedStyles:
+    - keyword
+    - variable
+# disable checking for array
+# [:foo, :bar, :baz]
+Style/SymbolArray:
+   Enabled: false

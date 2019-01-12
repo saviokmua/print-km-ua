@@ -7,6 +7,12 @@ class FormatPhotosController < ApplicationController
     @format_photo = FormatPhoto.all
   end
 
+  def show
+  end
+
+  def edit
+  end
+
   def new
     @format_photo = FormatPhoto.new
   end
