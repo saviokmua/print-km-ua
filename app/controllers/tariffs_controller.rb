@@ -11,6 +11,12 @@ class TariffsController < ApplicationController
     @tariff = Tariff.new
   end
 
+  def show
+  end
+
+  def edit
+  end
+
   def update
     if @tariff.update(tariff_params)
       redirect_to tariffs_path

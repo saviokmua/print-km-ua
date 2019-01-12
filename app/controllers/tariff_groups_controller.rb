@@ -7,6 +7,12 @@ class TariffGroupsController < ApplicationController
     @tariff_group = TariffGroup.all
   end
 
+  def show
+  end
+
+  def edit
+  end
+
   def new
     @tariff_group = TariffGroup.new
   end
