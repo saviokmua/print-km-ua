@@ -1,0 +1,10 @@
+<%= form_for :format_photo, url: format_photos_path do |f| %>
+  <p>
+    <%= f.label :name, 'Назва формату фото' %>
+    <%= f.text_field(:name, { class: 'form-control' }) %>
+  </p>
+  <p>
+    <br>
+    <%= f.submit('Зберегти', { class: 'btn btn-success' }) %>
+  </p>
+<% end %>
