@@ -1,7 +1,11 @@
 <%= form_for :tariff, url: tariffs_path do |f| %>
   <p>
-    <%= f.label :name, 'Назва тарифу' %>
-    <%= f.text_field(:name, { class: 'form-control' }) %>
+    <%= f.label :group, 'Група' %>
+    <%= f.text_field(:group, { class: 'form-control' }) %>
+  </p>
+  <p>
+    <%= f.label :format, 'Формат' %>
+    <%= f.text_field(:format, { class: 'form-control' }) %>
   </p>
   <p>
     <%= f.label :price, 'Ціна' %>
@@ -10,5 +14,6 @@
   <p>
     <br>
     <%= f.submit('Зберегти', { class: 'btn btn-success' }) %>
+    <%= link_to "Всі записи ", tariffs_path, class: 'btn btn-success' %>
   </p>
 <% end %>

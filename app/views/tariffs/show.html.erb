@@ -1,5 +1,6 @@
 <div id="tariff">
-<H1><%= @tariff.name %></H1>
+<H1><%= @tariff.group %></H1>
+<H1><%= @tariff.format %></H1>
 <H1><%= @tariff.price %></H1>
 <hr>
 <%= link_to "Додати тариф", new_tariff_path(@tariff), class: 'btn btn-warning' %>

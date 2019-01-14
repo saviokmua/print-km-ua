@@ -12,4 +12,6 @@
 #
 
 class Tariff < ApplicationRecord
+  belongs_to :tariff_group, dependent: :destroy
+  has_one :format_photo, dependent: :destroy
 end

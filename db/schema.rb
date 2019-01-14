@@ -30,12 +30,13 @@ ActiveRecord::Schema.define(version: 2019_01_04_070933) do
   end
 
   create_table "tariffs", force: :cascade do |t|
-    t.string "name"
+    t.text "group"
+    t.text "format"
     t.decimal "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["name"], name: "index_tariffs_on_name"
-    t.index ["price"], name: "index_tariffs_on_price"
+    t.index ["format"], name: "index_tariffs_on_format"
+    t.index ["group"], name: "index_tariffs_on_group"
   end
 
   create_table "users", force: :cascade do |t|
