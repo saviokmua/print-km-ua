@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'user/index'
+  get 'user/add'
+  get 'user/edit'
+  get 'user/delete'
   devise_for :users, controllers: {
     sessions: 'users/sessions'
   }
@@ -13,5 +17,5 @@ Rails.application.routes.draw do
   get 'conditions' => 'static_pages#conditions', as: 'conditions'
   get 'faq' => 'static_pages#faq', as: 'faq'
   get 'contacts' => 'static_pages#contacts', as: 'contacts'
-  get 'users' => 'users#user_form', as: 'user_form'
+  get 'user' => 'user#index', as: 'index'
 end
