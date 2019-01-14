@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     sessions: 'users/sessions'
   }
-
   root 'static_pages#index'
   get 'services' => 'static_pages#services', as: 'services'
   get 'price' => 'static_pages#price', as: 'price'
@@ -18,4 +17,9 @@ Rails.application.routes.draw do
   get 'faq' => 'static_pages#faq', as: 'faq'
   get 'contacts' => 'static_pages#contacts', as: 'contacts'
   get 'user' => 'user#index', as: 'index'
+	resources :user , :exept => [:show] do
+	 member do
+	   get :delete
+	 end
+	end
 end
