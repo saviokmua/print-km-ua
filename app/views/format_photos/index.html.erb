@@ -3,7 +3,8 @@
 <table class="index-table">
   <tr>
     <td width="100%">Назва формату фото</td>
-    <td colspan="2" ><%= link_to "Додати", new_format_photo_path, class: 'btn btn-warning' %></td>
+    <td colspan="1" ><%= link_to "Додати", new_format_photo_path, class: 'btn btn-warning' %></td>
+    <td colspan="1" width="150"><%= link_to 'Повернутись', root_path, class: 'btn btn-warning' %></td>
   </tr>
   <% @format_photo.each do |format_photo| %>
     <tr>

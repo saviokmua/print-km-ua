@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_04_070933) do
+ActiveRecord::Schema.define(version: 2019_01_14_185858) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,12 +30,13 @@ ActiveRecord::Schema.define(version: 2019_01_04_070933) do
   end
 
   create_table "tariffs", force: :cascade do |t|
-    t.string "name"
     t.decimal "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["name"], name: "index_tariffs_on_name"
-    t.index ["price"], name: "index_tariffs_on_price"
+    t.text "format_photo_id"
+    t.text "tariff_format_id"
+    t.index ["format_photo_id"], name: "index_tariffs_on_format_photo_id"
+    t.index ["tariff_format_id"], name: "index_tariffs_on_tariff_format_id"
   end
 
   create_table "users", force: :cascade do |t|
