@@ -1,10 +1,10 @@
 <%= form_for :tariff, url: tariffs_path do |f| %>
   <p>
-    <%= f.label :format_photo_id, 'Група' %>
-   <%= f.collection_select :tariff_group_id, TariffGroup.all, :id, :name,  {label: "Група тарифів", prompt: "Виберіть групу тарифів"}  %>
+    <%= f.label :tariff_group_id, 'Група' %>
+    <%= f.collection_select :tariff_group_id, TariffGroup.all, :id, :name,  {label: "Група тарифів", prompt: "Виберіть групу тарифів"}  %>
   </p>
   <p>
-    <%= f.label :tariff_format_id, 'Формат' %>
+    <%= f.label :format_photo_id, 'Формат' %>
     <%= f.collection_select :format_photo_id, FormatPhoto.all, :id, :name,  {label: "Формат фото", prompt: "Виберіть формат фото"}  %>
   </p>
   <p>
