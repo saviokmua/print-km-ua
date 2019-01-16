@@ -34,9 +34,9 @@ ActiveRecord::Schema.define(version: 2019_01_14_185858) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "format_photo_id"
-    t.text "tariff_format_id"
+    t.text "tariff_group_id"
     t.index ["format_photo_id"], name: "index_tariffs_on_format_photo_id"
-    t.index ["tariff_format_id"], name: "index_tariffs_on_tariff_format_id"
+    t.index ["tariff_group_id"], name: "index_tariffs_on_tariff_group_id"
   end
 
   create_table "users", force: :cascade do |t|
