@@ -11,4 +11,5 @@
 #
 
 class FormatPhoto < ApplicationRecord
+  has_one :tariff
 end

@@ -11,4 +11,5 @@
 #
 
 class TariffGroup < ApplicationRecord
+  has_many :tariffs
 end
