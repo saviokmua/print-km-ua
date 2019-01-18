@@ -45,25 +45,25 @@ brakeman:
 #     - bundle-audit update
 #     - bundle-audit check
 
-rspec:
-  stage: tests
-  script:
-    - apt-get update -q && apt-get install nodejs -yqq
-    - gem install bundler  --no-ri --no-rdoc
-    - bundle install --path vendor
-    - mv config/database.ci.yml config/database.yml
-    - bundle exec rake db:create db:schema:load --trace
-    - bundle exec rails db:environment:set
-    - bundle exec rake parallel:create
-    - bundle exec rake i18n:js:export
-    - bundle exec parallel_rspec --runtime-log ./parallel_runtime_rspec.log spec || true
-    - unset CIRCLECI
-    - bundle exec rspec --only-failure
-  artifacts:
-    paths:
-      - coverage/
-      - tmp/quick_rspec.new.json
-    expire_in: 7 days
+#rspec:
+#  stage: tests
+#  script:
+#    - apt-get update -q && apt-get install nodejs -yqq
+#    - gem install bundler  --no-ri --no-rdoc
+#    - bundle install --path vendor
+#    - mv config/database.ci.yml config/database.yml
+#    - bundle exec rake db:create db:schema:load --trace
+#    - bundle exec rails db:environment:set
+#    - bundle exec rake parallel:create
+#    - bundle exec rake i18n:js:export
+#    - bundle exec parallel_rspec --runtime-log ./parallel_runtime_rspec.log spec || true
+#    - unset CIRCLECI
+#    - bundle exec rspec --only-failure
+#  artifacts:
+#    paths:
+#      - coverage/
+#      - tmp/quick_rspec.new.json
+#    expire_in: 7 days
 
 #sync_to_gitlab:
 #  stage: deploy
@@ -89,14 +89,14 @@ rspec:
 #  only:
 #    - master
 
-deploy_production:
-  stage: deploy
-  script:
-    - bundle install --path vendor
-    - current=`git rev-parse HEAD`
-    - cap production deploy REVISION=$current
-  environment:
-    name: production
-    url: https://production.mercurytc.com
-  only:
-    - master
+#deploy_production:
+#  stage: deploy
+#  script:
+#    - bundle install --path vendor
+#    - current=`git rev-parse HEAD`
+#    - cap production deploy REVISION=$current
+#  environment:
+#    name: production
+#    url: https://production.mercurytc.com
+#  only:
+#    - master
