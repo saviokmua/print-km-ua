@@ -26,7 +26,7 @@ stages:
 rubocop:
   stage: cops
   script:
-    - apt-get update -q && apt-get install nodejs -yqq
+    - apt update -q && apt install nodejs -yqq
     - gem install bundler  --no-ri --no-rdoc
     - bundle install --path vendor
     - rubocop -R
