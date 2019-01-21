@@ -12,4 +12,6 @@
 #
 
 class Tariff < ApplicationRecord
+  belongs_to :format_photo
+  belongs_to :tariff_group
 end

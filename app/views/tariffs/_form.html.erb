@@ -1,7 +1,11 @@
 <%= form_for :tariff, url: tariffs_path do |f| %>
   <p>
-    <%= f.label :name, 'Назва тарифу' %>
-    <%= f.text_field(:name, { class: 'form-control' }) %>
+    <%= f.label :tariff_group_id, 'Група' %>
+    <%= f.collection_select :tariff_group_id, TariffGroup.all, :id, :name,  {label: "Група тарифів", prompt: "Виберіть групу тарифів"}  %>
+  </p>
+  <p>
+    <%= f.label :format_photo_id, 'Формат' %>
+    <%= f.collection_select :format_photo_id, FormatPhoto.all, :id, :name,  {label: "Формат фото", prompt: "Виберіть формат фото"}  %>
   </p>
   <p>
     <%= f.label :price, 'Ціна' %>
