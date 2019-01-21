@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'user/add'
   get 'user/edit'
   get 'user/delete'
-	resources :user
+	resources :users
 	devise_for :users, controllers: {
     sessions: 'users/sessions'}
   root 'static_pages#index'
