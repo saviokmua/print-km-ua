@@ -12,4 +12,5 @@
 
 class TariffGroup < ApplicationRecord
   has_many :tariffs
+  has_one :user
 end
