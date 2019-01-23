@@ -1,0 +1,23 @@
+<div id="tariff">
+<h1>Всі користувачі</h1>
+  <table class="index-table">
+  <tr>
+    <td width="25%">Имя</td>
+    <td width="25%">Емейл</td>
+    <td width="25%">Admin чи Юзер</td>
+    <td width="25%">Тариф</td>
+    <td colspan="1" width="150"><%= link_to 'Додати',  new_user_registration_path, class: 'btn btn-warning' %></td>
+    <td colspan="1" width="150"><%= link_to 'Повернутись', users_path, class: 'btn btn-warning' %></td>
+  </tr>
+  <% @user.each do |user| %>
+    <tr>
+      <td><%= user.name %></td>
+      <td><%= user.email %></td>
+      <td><%= user.admin %></td>
+      <td><%= user.tariff_id %></td>
+      <td><%= link_to "Редактувати", edit_user_registration_path(user), class: 'btn btn-warning' %></td>
+      <td><%= link_to "Видалити ", users_path(user), method: :delete, data: { confirm: "Ви дійсно хочете видалити користувача?" }, class: 'btn btn-danger' %></td>
+    </tr>
+  <% end %>
+</table>
+</div>

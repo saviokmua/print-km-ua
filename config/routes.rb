@@ -60,6 +60,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     sessions: 'users/sessions'
   }
+  resources :users, only: [:index]
   resources :tariffs
   resources :tariff_groups
   resources :format_photos
