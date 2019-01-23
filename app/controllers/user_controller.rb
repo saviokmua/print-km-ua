@@ -1,29 +1,36 @@
 class UserController < ApplicationController
   def index
     @users = User.all
-    end
-  def add
+  end
+  def build_user
     @user = User.find(params[:id])
   end
-  def create
-    @user = User.new(user[:id])
-     user.save
-    redirect_to @user
+  def add
+    build_user
+    @user = User.new(user_params)
+    if @user.save
+      redirect_to @user
+    else
+      render 'new'
+    end
   end
-  def edit
+  def create
+    build_user
+    @user = User.new(params[:id])
+    end
+    def edit
+      build_user
     @user = User.new(params[:id])
   end
   def delete
+    build_user
     @user = User.find(params[:id])
   end
-  def destroy
-    @user = User.find(params[:id])
-    @user.destroy
-    redirect_to user_path
-  end
- # private
-  #def user_params
-  #params.require(:users).permit(:email, :name, :admin)
-#end
+    end
+ private
+  def user_params
+  params.require(:user).permit(:email, :name, :password,
+                                :password_confirmation)
 end
+
 
